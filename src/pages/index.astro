@@ -1,11 +1,155 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Placeholder from '../components/Placeholder.astro';
+import ReviewSlider from '../components/ReviewSlider.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const paths = [
+	{
+		title: 'Architecture',
+		href: '/architecture',
+		alt: 'Bright living room with natural materials, plants and soft daylight',
+	},
+	{
+		title: 'Personal',
+		href: '/services',
+		image: '/sabina-portrait-1.webp',
+		alt: "Sabina D'Ercole smiling against a warm yellow background",
+	},
+	{
+		title: "Let's work together",
+		href: '/contact',
+		alt: 'Team of people collaborating around a table',
+	},
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Feng Shui Consulting Services by Sabina Dercole | Sabina Dercole">
+	<!-- Hero -->
+	<section class="relative">
+		<Placeholder
+			alt="Serene bedroom in natural tones with a hanging chair, plants and line-art prints"
+			class="h-[70vh] min-h-[420px] w-full"
+		/>
+		<div class="absolute inset-0 flex items-center justify-center">
+			<div class="mx-6 max-w-2xl bg-white/85 px-8 py-10 text-center backdrop-blur-sm sm:px-14">
+				<h1 class="font-display text-4xl tracking-[0.08em] text-neutral-900 sm:text-5xl">
+					Harmonise your inner and outer space
+				</h1>
+				<a
+					href="/contact"
+					class="mt-8 inline-block bg-coral px-8 py-3 text-sm font-medium tracking-[0.2em] text-white uppercase transition-colors hover:bg-tangerine"
+				>
+					Let's work together
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Quote -->
+	<section class="bg-neutral-50">
+		<blockquote class="mx-auto max-w-3xl px-6 py-20 text-center">
+			<p class="font-display text-3xl text-neutral-700 italic sm:text-4xl">
+				“As above, so below; as inside, so outside.”
+			</p>
+			<cite class="mt-6 block text-sm tracking-[0.25em] text-neutral-500 uppercase not-italic">
+				— The Kybalion
+			</cite>
+		</blockquote>
+	</section>
+
+	<!-- Three paths -->
+	<section class="mx-auto max-w-6xl px-6 py-20">
+		<div class="grid gap-12 sm:grid-cols-3">
+			{
+				paths.map(({ title, href, image, alt }) => (
+					<a href={href} class="group text-center">
+						<div class="relative mx-auto aspect-square w-56 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-105">
+							{image ? (
+								<img src={image} alt={alt} loading="lazy" class="h-full w-full object-cover" />
+							) : (
+								<Placeholder alt={alt} class="h-full w-full" />
+							)}
+						</div>
+						<h2 class="mt-6 font-display text-2xl tracking-[0.15em] text-neutral-900 uppercase transition-colors group-hover:text-coral">
+							{title}
+						</h2>
+					</a>
+				))
+			}
+		</div>
+	</section>
+
+	<!-- Feng Shui -->
+	<section class="mx-auto max-w-6xl px-6 py-20">
+		<div class="grid items-center gap-12 lg:grid-cols-2">
+			<div>
+				<h2 class="font-display text-5xl text-sand italic">Feng Shui</h2>
+				<p class="mt-6 text-lg text-neutral-600">Feng Shui is an art and science of observation.</p>
+				<p class="mt-4 leading-relaxed text-neutral-600">
+					The goal is to create harmonious environments that combine the energy of a space and its
+					inhabitants, so that they benefit from a conscious and balanced existence.
+				</p>
+			</div>
+			<Placeholder
+				alt="Pastel architectural composition of walls and openings in soft pink light"
+				class="aspect-[4/3] w-full"
+			/>
+		</div>
+	</section>
+
+	<!-- Conscious Architecture -->
+	<section class="bg-neutral-50">
+		<div class="mx-auto max-w-6xl px-6 py-20">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<Placeholder
+					alt="Top-down view of a minimalist courtyard with a walkway and reflecting pool"
+					class="order-2 aspect-[3/4] max-h-[480px] w-full lg:order-1"
+				/>
+				<div class="order-1 lg:order-2">
+					<h2 class="font-display text-5xl text-sand italic">Conscious Architecture</h2>
+					<p class="mt-6 leading-relaxed text-neutral-600">
+						Architecture and design are carried out carefully and adapted to your goals and needs,
+						so shaping your space and the energy of its occupants.
+					</p>
+					<p class="mt-4 leading-relaxed text-neutral-600">
+						Shape your personal space, create your home, renew your workplace.
+					</p>
+					<p class="mt-4 leading-relaxed text-neutral-600">
+						With the use of Feng Shui I can change the distribution of areas within a specific
+						space or re-adapt the internal decor so as to develop positive energies.
+					</p>
+					<p class="mt-4 leading-relaxed text-neutral-600">Why not reorganise your environment?</p>
+					<p class="mt-4 leading-relaxed text-neutral-600">
+						Get advice from personalised online Feng Shui consulting so that we can create a
+						particular area together — in just a few simple steps!
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Bio Architecture -->
+	<section class="mx-auto max-w-6xl px-6 py-20">
+		<div class="grid items-center gap-12 lg:grid-cols-2">
+			<div>
+				<h2 class="font-display text-5xl text-sand italic">Bio Architecture</h2>
+				<p class="mt-6 leading-relaxed text-neutral-600">
+					Sustainable Architecture, which I studied after graduating, responds to the need to
+					address environmental issues by means of architecture, generating a positive impact by
+					the construction of self-sustaining buildings.
+				</p>
+				<p class="mt-4 leading-relaxed text-neutral-600">
+					By doing this we can bring together architecture, nature and people so that they coexist
+					in a balanced manner.
+				</p>
+			</div>
+			<Placeholder
+				alt="Rendering of a sustainable building with green terraces integrated into the facade"
+				class="aspect-[4/3] w-full"
+			/>
+		</div>
+	</section>
+
+	<!-- Customer reviews slider -->
+	<ReviewSlider />
 </Layout>

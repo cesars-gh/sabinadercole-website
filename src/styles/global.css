@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  /* Palette from colors.txt — Colors - Sabina Feng Shui */
+  --color-sand: #f2af5c;
+  --color-silver: #d4d4d4;
+  --color-tangerine: #f48c03;
+  --color-coral: #ff3c65;
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Jost", "Avenir Next", "Helvetica Neue", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}

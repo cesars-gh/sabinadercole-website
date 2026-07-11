@@ -1,0 +1,44 @@
+---
+const links = [
+	{ href: '/', label: 'Home' },
+	{ href: '/services', label: 'Services' },
+	{ href: '/architecture', label: 'Architecture' },
+	{ href: '/about', label: 'About' },
+	{ href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<header class="sticky top-0 z-50 border-b border-neutral-100 bg-white/90 backdrop-blur">
+	<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+		<a href="/" class="shrink-0" aria-label="Sabina D’Ercole — Home">
+			<img src="/logos/logo-grey.webp" alt="Sabina D’Ercole logo" class="h-12 w-auto" />
+		</a>
+		<nav aria-label="Main navigation">
+			<ul class="flex items-center gap-5 font-display text-lg sm:gap-8 sm:text-xl">
+				{
+					links.map(({ href, label }) => {
+						const active = currentPath === href;
+						return (
+							<li>
+								<a
+									href={href}
+									aria-current={active ? 'page' : undefined}
+									class:list={[
+										'pb-1 transition-colors hover:text-coral',
+										active
+											? 'border-b-2 border-coral text-coral'
+											: 'text-neutral-800',
+									]}
+								>
+									{label}
+								</a>
+							</li>
+						);
+					})
+				}
+			</ul>
+		</nav>
+	</div>
+</header>

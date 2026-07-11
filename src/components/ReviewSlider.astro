@@ -1,0 +1,110 @@
+---
+const reviews = [
+	{
+		image: '/slideshow-img-1.png',
+		alt: 'Woman smiling while working on a laptop at a desk with a vase of dried flowers',
+		quote:
+			'Now that I know my min gua I feel that I flow in my personal and business life more easily.',
+		author: 'Alejandra Parra',
+		context: 'The energy by my side',
+	},
+	{
+		image: '/slideshow-img-2.png',
+		alt: 'Boho bedroom with a rattan peacock chair, mustard canopy and straw hats on the wall',
+		quote:
+			'We could feel a real difference in our space that was also transmitted to our relationship as a family.',
+		author: 'César Sánchez & Sofía López',
+		context: 'A change in the space and feeling',
+	},
+	{
+		image: '/slideshow-img-3.png',
+		alt: 'Festive dining room with a Christmas tree, pink textured wall and a set wooden table',
+		quote:
+			'It was beautiful to apply feng shui to our Christmas dinner and see how the place felt.',
+		author: 'Alex Green & Elisa Rosas',
+		context: 'An unforgettable Christmas',
+	},
+];
+---
+
+<section
+	class="bg-neutral-50"
+	data-slider
+	aria-roledescription="carousel"
+	aria-label="Customer reviews"
+>
+	<div class="mx-auto max-w-6xl px-6 py-20">
+		<div class="overflow-hidden">
+			<div class="flex transition-transform duration-700 ease-in-out" data-slider-track>
+			{
+				reviews.map(({ image, alt, quote, author, context }, i) => (
+					<article
+						class="grid w-full shrink-0 items-center gap-10 lg:grid-cols-2"
+						aria-roledescription="slide"
+						aria-label={`Review ${i + 1} of ${reviews.length}`}
+					>
+						<img src={image} alt={alt} loading="lazy" class="aspect-square w-full max-w-xl object-cover" />
+						<blockquote class="px-2 sm:px-6">
+							<span class="font-display text-7xl leading-none text-sand" aria-hidden="true">
+								“
+							</span>
+							<p class="font-display text-2xl leading-snug text-neutral-800 italic sm:text-3xl">
+								{quote}
+							</p>
+							<footer class="mt-8 text-neutral-500">
+								<p>{author}</p>
+								<p>{context}</p>
+							</footer>
+						</blockquote>
+					</article>
+				))
+			}
+			</div>
+		</div>
+		<div class="mt-10 flex justify-center gap-3">
+			{
+				reviews.map((_, i) => (
+					<button
+						type="button"
+						data-slider-dot
+						aria-label={`Go to review ${i + 1}`}
+						class="h-4 w-4 rounded-full bg-silver transition-colors hover:bg-sand aria-[current=true]:bg-coral"
+					/>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script>
+	document.querySelectorAll<HTMLElement>('[data-slider]').forEach((slider) => {
+		const track = slider.querySelector<HTMLElement>('[data-slider-track]')!;
+		const dots = [...slider.querySelectorAll<HTMLButtonElement>('[data-slider-dot]')];
+		let index = 0;
+		let timer: ReturnType<typeof setInterval>;
+
+		const goTo = (i: number) => {
+			index = (i + dots.length) % dots.length;
+			track.style.transform = `translateX(-${index * 100}%)`;
+			dots.forEach((dot, d) => dot.setAttribute('aria-current', String(d === index)));
+		};
+
+		const startAutoplay = () => {
+			timer = setInterval(() => goTo(index + 1), 6000);
+		};
+
+		dots.forEach((dot, i) =>
+			dot.addEventListener('click', () => {
+				clearInterval(timer);
+				goTo(i);
+				startAutoplay();
+			}),
+		);
+
+		slider.addEventListener('mouseenter', () => clearInterval(timer));
+		slider.addEventListener('mouseleave', startAutoplay);
+
+		goTo(0);
+		startAutoplay();
+	});
+</script>

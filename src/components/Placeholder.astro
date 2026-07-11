@@ -1,0 +1,37 @@
+---
+/**
+ * Image placeholder. Swap each instance for a real <img> or <Image> later —
+ * the `alt` prop already holds the intended alt text.
+ */
+interface Props {
+	alt: string;
+	class?: string;
+}
+
+const { alt, class: className = '' } = Astro.props;
+---
+
+<figure
+	role="img"
+	aria-label={alt}
+	class:list={[
+		'flex items-center justify-center overflow-hidden border border-dashed border-silver bg-neutral-100',
+		className,
+	]}
+>
+	<figcaption class="max-w-xs px-6 text-center">
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.5"
+			class="mx-auto mb-3 h-8 w-8 text-silver"
+			aria-hidden="true"
+		>
+			<rect x="3" y="4" width="18" height="16" rx="2" />
+			<circle cx="9" cy="10" r="2" />
+			<path d="m3 17 5-4 4 3 4-4 5 5" />
+		</svg>
+		<span class="block text-xs leading-relaxed text-neutral-400 italic">{alt}</span>
+	</figcaption>
+</figure>

@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Placeholder from '../components/Placeholder.astro';
+---
+
+<Layout title="Feng Shui Architecture | Sabina Dercole">
+	<!-- Hero -->
+	<section class="relative">
+		<Placeholder
+			alt="Classical architectural ink drawing of a curved staircase in plan and elevation"
+			class="h-[55vh] min-h-[360px] w-full"
+		/>
+		<div class="absolute inset-0 flex items-end justify-center pb-12">
+			<h1
+				class="bg-white/85 px-10 py-4 font-display text-3xl tracking-[0.15em] text-neutral-900 uppercase backdrop-blur-sm sm:text-4xl"
+			>
+				Architecture
+			</h1>
+		</div>
+	</section>
+
+	<!-- Feng Shui Study -->
+	<section class="mx-auto max-w-6xl px-6 py-20">
+		<h2 class="text-center font-display text-4xl tracking-[0.2em] text-neutral-900 uppercase">
+			Feng Shui Study
+		</h2>
+		<div class="mt-12 grid items-center gap-12 lg:grid-cols-2">
+			<Placeholder
+				alt="City environment around a house: streets, buildings and surrounding structures"
+				class="aspect-[4/3] w-full"
+			/>
+			<div>
+				<p class="leading-relaxed text-neutral-600">
+					The School of Forms, where the influence of Qí in the House is observed: streets,
+					buildings, surroundings, determining structures (e.g. cell phone antennas, factories,
+					cemeteries, highways).
+				</p>
+				<a
+					href="/contact"
+					class="mt-8 inline-block text-sm font-medium tracking-[0.2em] text-tangerine uppercase underline-offset-4 hover:underline"
+				>
+					Learn more
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Zai Gua Ba Zhai -->
+	<section class="bg-neutral-50">
+		<div class="mx-auto max-w-6xl px-6 py-20">
+			<h2 class="text-center font-display text-4xl tracking-[0.2em] text-neutral-900 uppercase">
+				Zai Gua Ba Zhai
+			</h2>
+			<div class="mt-12 grid items-center gap-12 lg:grid-cols-2">
+				<Placeholder
+					alt="Feng shui compass chart with the eight orientations shaded in different colours"
+					class="mx-auto aspect-square w-full max-w-sm rounded-full"
+				/>
+				<div>
+					<p class="leading-relaxed text-neutral-600">
+						Identifying the 8 orientations allows us to calculate the trigram to which the house
+						belongs and which are its 8 palaces; 4 favorable and 4 unfavorable.
+					</p>
+					<a
+						href="/contact"
+						class="mt-8 inline-block text-sm font-medium tracking-[0.2em] text-tangerine uppercase underline-offset-4 hover:underline"
+					>
+						Learn more
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

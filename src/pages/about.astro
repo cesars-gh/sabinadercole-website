@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const studies = [
+	{
+		title: 'Architect',
+		detail: 'I.U.P.S.M. — Venezuela',
+	},
+	{
+		title: 'Master in Sustainable Architecture and Energy Saving',
+		detail: 'Università La Sapienza — Rome — Italy',
+	},
+	{
+		title: 'Feng Shui for Architects',
+		detail: 'Xing Shi Pai — FengShui Roma Architecture & Design School — Rome — Italy',
+	},
+	{
+		title: 'Flying Stars',
+		detail: 'FengShui Roma Architecture & Design School — Rome — Italy',
+	},
+	{
+		title: 'Ba-zi Suan Ming',
+		detail: 'FengShui Roma Architecture & Design School — Rome — Italy',
+	},
+	{
+		title: 'Advanced Flying Stars',
+		detail: 'Feng Shui for Environmental Designers — FSED — Online',
+	},
+	{
+		title: 'Feng Shui for Property Development',
+		detail: 'European College of Feng Shui — Rome — Italy',
+	},
+	{
+		title: 'The Correct Use of Feng Shui Systems in Professional Consultancy',
+		detail:
+			'European College of Feng Shui (ECOFS) Berlin and Sydney, and FengShui Roma Architecture & Design School — Online',
+	},
+];
+
+const philosophy = [
+	{
+		title: 'Integrity',
+		text: 'It is imperative always to be honest and to behave in an ethical manner.',
+	},
+	{
+		title: 'Transcendence',
+		text: 'I believe that everything has a purpose and an impact beyond the tangible.',
+	},
+	{
+		title: 'Respect',
+		text: 'I value everybody who wants to take the path that leads to self-improvement.',
+	},
+];
+---
+
+<Layout title="About | Sabina Dercole">
+	<!-- About me -->
+	<section class="mx-auto max-w-6xl px-6 py-20">
+		<h1 class="text-center font-display text-4xl tracking-[0.2em] text-neutral-900 uppercase">
+			About me
+		</h1>
+		<div class="mt-12 grid items-start gap-12 lg:grid-cols-2">
+			<img
+				src="/sabina-portrait-2.webp"
+				alt="Portrait of Sabina D'Ercole, feng shui consultant and architect"
+				class="aspect-[3/4] w-full max-w-md justify-self-center object-cover"
+			/>
+			<div>
+				<h2 class="font-display text-4xl text-sand italic">Sabina D'Ercole</h2>
+				<div class="mt-6 space-y-4 leading-relaxed text-neutral-600">
+					<p>
+						Over ten years ago I began a journey of self-discovery by means of a range of
+						experiences and studies. I devoted a great deal of attention to finding a balance in
+						the relationship between people and nature.
+					</p>
+					<p>
+						When I had finished my architectural studies I decided to go to Rome, the city of art
+						and beauty, where I took a master's degree in sustainable construction.
+					</p>
+					<p>
+						I was trying to arrive at a form of architecture that would operate so as to preserve
+						the renewable energies of the planet.
+					</p>
+					<p>
+						As a result of my continuing efforts to go beyond strictly aesthetic and functional
+						approaches I was inspired to try to integrate sustainable architecture with my love of
+						harmony and beauty.
+					</p>
+					<p>
+						I feel that I have achieved this process of integration by means of Feng Shui, which
+						allows me to create personalised spaces where individuals are able to experience peace
+						and well-being and to live prosperous and fulfilling lives.
+					</p>
+					<p>
+						I can offer personalised time as a practitioner of sustainable architecture married to
+						Feng Shui culture, so helping you to realise your wishes and to create a unique and
+						sustainable space where living harmoniously is your priority.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- My studies -->
+	<section class="bg-neutral-50">
+		<div class="mx-auto max-w-4xl px-6 py-20">
+			<h2 class="text-center font-display text-4xl tracking-[0.2em] text-neutral-900 uppercase">
+				My studies
+			</h2>
+			<ul class="mt-12 space-y-6">
+				{
+					studies.map(({ title, detail }) => (
+						<li class="border-l-2 border-sand pl-6">
+							<h3 class="font-medium text-neutral-900">{title}</h3>
+							<p class="mt-1 text-sm text-neutral-500">{detail}</p>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</section>
+
+	<!-- My work -->
+	<section class="mx-auto max-w-6xl px-6 py-20">
+		<h2 class="text-center font-display text-4xl tracking-[0.2em] text-neutral-900 uppercase">
+			My work
+		</h2>
+		<div class="mt-12 grid items-center gap-12 lg:grid-cols-2">
+			<div class="space-y-4 leading-relaxed text-neutral-600">
+				<p>I have been involved in different aspects of design and architecture as follows:</p>
+				<p>
+					I have worked as an architect at Cucine Berloni, as a jewellery designer at Picaza and as
+					an independent architect in the field of home and business designs.
+				</p>
+				<p>
+					I have also participated in various interior design projects, while for the last two
+					years I have dedicated myself exclusively to Feng Shui consulting as applied to
+					architecture and to branding, and as a tool for increasing self-knowledge.
+				</p>
+			</div>
+			<img
+				src="/sabina-stairs.webp"
+				alt="Sabina D'Ercole at the entrance of a colourful townhouse"
+				class="aspect-[4/3] w-full object-cover"
+				loading="lazy"
+			/>
+		</div>
+	</section>
+
+	<!-- My philosophy -->
+	<section class="bg-sand">
+		<div class="mx-auto max-w-6xl px-6 py-20">
+			<h2 class="text-center font-display text-4xl tracking-[0.2em] text-white uppercase">
+				My philosophy
+			</h2>
+			<p class="mx-auto mt-4 max-w-2xl text-center text-neutral-800">
+				These are the principles and values that make up my personal philosophy:
+			</p>
+			<div class="mt-12 grid gap-10 sm:grid-cols-3">
+				{
+					philosophy.map(({ title, text }) => (
+						<article class="bg-white/90 p-8 text-center">
+							<h3 class="font-display text-2xl tracking-[0.1em] text-neutral-900 uppercase">
+								{title}
+							</h3>
+							<div class="mx-auto mt-4 h-px w-10 bg-tangerine" />
+							<p class="mt-4 leading-relaxed text-neutral-600">{text}</p>
+						</article>
+					))
+				}
+			</div>
+			<p class="mx-auto mt-12 max-w-2xl text-center leading-relaxed text-neutral-800">
+				For me it is essential that my life and my profession go hand-in-hand and are mutually
+				supportive.
+			</p>
+		</div>
+	</section>
+</Layout>

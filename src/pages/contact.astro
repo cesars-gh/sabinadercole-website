@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const inputClasses =
+	'w-full border-b border-silver bg-transparent py-3 text-neutral-800 placeholder-neutral-400 outline-none transition-colors focus:border-coral';
+---
+
+<Layout title="Contact | Sabina Dercole">
+	<section class="mx-auto max-w-2xl px-6 py-24">
+		<h1 class="text-center font-display text-4xl tracking-[0.1em] text-neutral-900 sm:text-5xl">
+			I would love to hear from you
+		</h1>
+
+		<!-- TODO: wire up to a form backend (e.g. Formspree, Netlify Forms) before going live -->
+		<form class="mt-16 space-y-8" method="post" action="#">
+			<div class="grid gap-8 sm:grid-cols-2">
+				<div>
+					<label for="name" class="mb-1 block text-sm tracking-[0.15em] text-neutral-500 uppercase">
+						Name <span class="text-coral">*</span>
+					</label>
+					<input
+						id="name"
+						name="name"
+						type="text"
+						required
+						placeholder="Your name"
+						class={inputClasses}
+					/>
+				</div>
+				<div>
+					<label
+						for="last-name"
+						class="mb-1 block text-sm tracking-[0.15em] text-neutral-500 uppercase"
+					>
+						Last name
+					</label>
+					<input
+						id="last-name"
+						name="last-name"
+						type="text"
+						placeholder="Your last name"
+						class={inputClasses}
+					/>
+				</div>
+			</div>
+			<div>
+				<label for="email" class="mb-1 block text-sm tracking-[0.15em] text-neutral-500 uppercase">
+					Your email <span class="text-coral">*</span>
+				</label>
+				<input
+					id="email"
+					name="email"
+					type="email"
+					required
+					placeholder="Your email address"
+					class={inputClasses}
+				/>
+			</div>
+			<div>
+				<label
+					for="message"
+					class="mb-1 block text-sm tracking-[0.15em] text-neutral-500 uppercase"
+				>
+					Message <span class="text-coral">*</span>
+				</label>
+				<textarea
+					id="message"
+					name="message"
+					required
+					rows="5"
+					placeholder="Enter your message"
+					class={inputClasses}></textarea>
+			</div>
+			<div class="text-center">
+				<button
+					type="submit"
+					class="bg-coral px-12 py-3 text-sm font-medium tracking-[0.2em] text-white uppercase transition-colors hover:bg-tangerine"
+				>
+					Submit
+				</button>
+			</div>
+		</form>
+	</section>
+</Layout>
