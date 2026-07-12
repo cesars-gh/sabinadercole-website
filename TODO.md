@@ -1,6 +1,6 @@
 # TODO
 
 [ ] Form handler in the backend
-[ ] Add images
+[X] Add images
 [ ] Connect repo and domain to Netlify
  
