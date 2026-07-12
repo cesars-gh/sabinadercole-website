@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Placeholder from '../components/Placeholder.astro';
 ---
 
 <Layout title="Feng Shui Architecture | Sabina Dercole">
 	<!-- Hero -->
 	<section class="relative">
-		<Placeholder
+		<img
+			src="/hero-architecture.webp"
 			alt="Classical architectural ink drawing of a curved staircase in plan and elevation"
-			class="h-[55vh] min-h-[360px] w-full"
+			class="h-[55vh] min-h-[360px] w-full object-cover"
 		/>
 		<div class="absolute inset-0 flex items-end justify-center pb-12">
 			<h1
@@ -25,9 +25,11 @@ import Placeholder from '../components/Placeholder.astro';
 			Feng Shui Study
 		</h2>
 		<div class="mt-12 grid items-center gap-12 lg:grid-cols-2">
-			<Placeholder
+			<img
+				src="/feng-shui-study.webp"
 				alt="City environment around a house: streets, buildings and surrounding structures"
-				class="aspect-[4/3] w-full"
+				loading="lazy"
+				class="aspect-[4/3] w-full object-cover"
 			/>
 			<div>
 				<p class="leading-relaxed text-neutral-600">
@@ -52,9 +54,11 @@ import Placeholder from '../components/Placeholder.astro';
 				Zai Gua Ba Zhai
 			</h2>
 			<div class="mt-12 grid items-center gap-12 lg:grid-cols-2">
-				<Placeholder
+				<img
+					src="/bagua-compass.webp"
 					alt="Feng shui compass chart with the eight orientations shaded in different colours"
-					class="mx-auto aspect-square w-full max-w-sm rounded-full"
+					loading="lazy"
+					class="mx-auto aspect-square w-full max-w-sm rounded-full object-cover"
 				/>
 				<div>
 					<p class="leading-relaxed text-neutral-600">

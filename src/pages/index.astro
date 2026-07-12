@@ -7,6 +7,7 @@ const paths = [
 	{
 		title: 'Architecture',
 		href: '/architecture',
+		image: '/path-architecture.webp',
 		alt: 'Bright living room with natural materials, plants and soft daylight',
 	},
 	{
@@ -18,7 +19,8 @@ const paths = [
 	{
 		title: "Let's work together",
 		href: '/contact',
-		alt: 'Team of people collaborating around a table',
+		image: '/path-collaboration.webp',
+		alt: 'Floor plans, material samples and cups of tea laid out on a wooden table',
 	},
 ];
 ---
@@ -26,9 +28,10 @@ const paths = [
 <Layout title="Feng Shui Consulting Services by Sabina Dercole | Sabina Dercole">
 	<!-- Hero -->
 	<section class="relative">
-		<Placeholder
+		<img
+			src="/hero-home.webp"
 			alt="Serene bedroom in natural tones with a hanging chair, plants and line-art prints"
-			class="h-[70vh] min-h-[420px] w-full"
+			class="h-[70vh] min-h-[420px] w-full object-cover"
 		/>
 		<div class="absolute inset-0 flex items-center justify-center">
 			<div class="mx-6 max-w-2xl bg-white/85 px-8 py-10 text-center backdrop-blur-sm sm:px-14">
@@ -90,9 +93,11 @@ const paths = [
 					inhabitants, so that they benefit from a conscious and balanced existence.
 				</p>
 			</div>
-			<Placeholder
-				alt="Pastel architectural composition of walls and openings in soft pink light"
-				class="aspect-[4/3] w-full"
+			<img
+				src="/feng-shui-meditation.webp"
+				alt="Person meditating on a cushion in a serene light-filled room full of plants"
+				loading="lazy"
+				class="aspect-[4/3] w-full object-cover"
 			/>
 		</div>
 	</section>
@@ -101,9 +106,11 @@ const paths = [
 	<section class="bg-neutral-50">
 		<div class="mx-auto max-w-6xl px-6 py-20">
 			<div class="grid items-center gap-12 lg:grid-cols-2">
-				<Placeholder
+				<img
+					src="/courtyard-topdown.webp"
 					alt="Top-down view of a minimalist courtyard with a walkway and reflecting pool"
-					class="order-2 aspect-[3/4] max-h-[480px] w-full lg:order-1"
+					loading="lazy"
+					class="order-2 aspect-[3/4] max-h-[480px] w-full object-cover lg:order-1"
 				/>
 				<div class="order-1 lg:order-2">
 					<h2 class="font-display text-5xl text-sand italic">Conscious Architecture</h2>
@@ -143,9 +150,11 @@ const paths = [
 					in a balanced manner.
 				</p>
 			</div>
-			<Placeholder
+			<img
+				src="/bio-architecture.webp"
 				alt="Rendering of a sustainable building with green terraces integrated into the facade"
-				class="aspect-[4/3] w-full"
+				loading="lazy"
+				class="aspect-[4/3] w-full object-cover"
 			/>
 		</div>
 	</section>

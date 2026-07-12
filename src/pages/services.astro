@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Placeholder from '../components/Placeholder.astro';
 
 const offerings = [
 	{
@@ -34,9 +33,10 @@ const testimonials = [
 <Layout title="Expert Feng Shui Consulting Services for Personal and Business | Sabina Dercole">
 	<!-- Hero -->
 	<section class="relative">
-		<Placeholder
+		<img
+			src="/hero-services.webp"
 			alt="Hand drawing over an architectural floor plan with a pen beside a laptop"
-			class="h-[55vh] min-h-[360px] w-full"
+			class="h-[55vh] min-h-[360px] w-full object-cover"
 		/>
 		<div class="absolute inset-0 flex items-end justify-center pb-12">
 			<h1
@@ -81,9 +81,11 @@ const testimonials = [
 					Learn more
 				</a>
 			</div>
-			<Placeholder
+			<img
+				src="/services-house.webp"
 				alt="Modern white house exterior with clean lines and a green lawn"
-				class="aspect-[4/3] w-full"
+				loading="lazy"
+				class="aspect-[4/3] w-full object-cover"
 			/>
 		</div>
 	</section>
