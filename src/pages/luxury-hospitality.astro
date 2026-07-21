@@ -1,3 +1,189 @@
 ---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+	{
+		title: 'Guest Experience Audits',
+		text: 'A full walkthrough of the property to assess how energy, light and flow affect the guest journey — from arrival to check-out.',
+	},
+	{
+		title: 'Classical Feng Shui Assessments',
+		text: 'Compass-school analysis (flying stars, wandering stars, Ming Gua) applied to lobbies, suites, spas and executive spaces.',
+	},
+	{
+		title: 'Wellness-Focused Architectural Consulting',
+		text: 'Design recommendations that merge conscious architecture with hospitality standards, improving both wellbeing and commercial value.',
+	},
+	{
+		title: 'Biophilic & Sensory Design Strategies',
+		text: 'Natural materials, light, scent and sound guidance to create restorative, multi-sensory environments for guests and staff.',
+	},
+	{
+		title: 'Spa & Treatment Journey Design',
+		text: 'Energetic and spatial planning for spa circuits, treatment rooms and relaxation areas that deepen the sense of retreat.',
+	},
+	{
+		title: 'Executive & Staff Wellbeing Environments',
+		text: 'Back-of-house and administrative spaces designed to support focus, calm and long-term staff wellbeing.',
+	},
+];
+
+const process = [
+	{
+		step: '01',
+		title: 'Discovery',
+		text: 'A conversation about your brand, guest profile and the goals for the property or spa.',
+	},
+	{
+		step: '02',
+		title: 'On-Site or Remote Assessment',
+		text: 'Classical Feng Shui and architectural analysis of the space, using plans, compass readings and site visits.',
+	},
+	{
+		step: '03',
+		title: 'Recommendations',
+		text: 'A tailored report translating the energetic and architectural findings into actionable design guidance.',
+	},
+	{
+		step: '04',
+		title: 'Implementation Support',
+		text: 'Ongoing collaboration with architects, interior designers and hotel teams through to completion.',
+	},
+];
 ---
-<html><body><h1>Architect | Founder of Studio Dao Wellbeing | Integrating Architecture, Classical Feng Shui & Human Wellbeing</h1><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" alt="Luxury wellness hotel" style="max-width:100%"/><section><h2>Luxury Hotels & Spa Consultancy</h2><p>I partner with luxury hotels, wellness retreats and spa brands to create environments that enhance guest wellbeing, emotional restoration and commercial value through architecture, Classical Feng Shui, biophilic design and neuroarchitecture.</p><p>From guest rooms and suites to spa journeys, reception areas and executive spaces, every recommendation is evidence-informed and tailored to the brand identity while respecting the energetic qualities of place.</p><h3>Services</h3><ul><li>Guest experience audits</li><li>Classical Feng Shui assessments</li><li>Wellness-focused architectural consulting</li><li>Biophilic and sensory design strategies</li><li>Executive and staff wellbeing environments</li><li>Luxury renovation guidance</li></ul><p>Studio Dao Wellbeing helps transform spaces into destinations that guests remember not only for their beauty, but for how they made them feel.</p></section></body></html>
+
+<Layout
+	title="Luxury Hotels & Spa Consultancy | Sabina Dercole"
+	description="Classical Feng Shui and conscious architecture consultancy for luxury hotels, wellness retreats and spa brands, by Sabina Dercole."
+>
+	<!-- Hero -->
+	<section class="relative">
+		<img
+			src="/images/uploads/hero-luxury-hospitality.jpg"
+			alt="Sun loungers facing buildings near a mountain at a luxury resort"
+			class="h-[65vh] min-h-[400px] w-full object-cover"
+		/>
+		<div class="absolute inset-0 flex items-end justify-center pb-12">
+			<h1
+				class="bg-white/85 px-10 py-4 text-center font-display text-3xl tracking-[0.1em] text-neutral-900 uppercase backdrop-blur-sm sm:text-4xl"
+			>
+				Luxury Hotels &amp; Spa Consultancy
+			</h1>
+		</div>
+	</section>
+
+	<!-- Intro -->
+	<section class="mx-auto max-w-4xl px-6 py-20 text-center">
+		<h2 class="font-display text-5xl text-sand italic">Spaces guests remember</h2>
+		<p class="mt-6 text-lg leading-relaxed text-neutral-600">
+			I partner with luxury hotels, wellness retreats and spa brands to create environments that
+			enhance guest wellbeing, emotional restoration and commercial value — bringing together
+			architecture, Classical Feng Shui, biophilic design and neuroarchitecture.
+		</p>
+		<p class="mt-4 leading-relaxed text-neutral-600">
+			From guest rooms and suites to spa journeys, reception areas and executive spaces, every
+			recommendation is evidence-informed and tailored to the brand identity, while respecting the
+			energetic qualities of the place.
+		</p>
+	</section>
+
+	<!-- Services grid -->
+	<section class="bg-neutral-50">
+		<div class="mx-auto max-w-6xl px-6 py-20">
+			<h2 class="text-center font-display text-4xl text-neutral-900 uppercase tracking-[0.1em]">
+				Services
+			</h2>
+			<div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+				{
+					services.map(({ title, text }) => (
+						<article class="border border-neutral-100 bg-white p-8 text-center shadow-sm">
+							<h3 class="font-display text-xl tracking-[0.05em] text-neutral-900 uppercase">
+								{title}
+							</h3>
+							<div class="mx-auto mt-4 h-px w-10 bg-tangerine" />
+							<p class="mt-4 leading-relaxed text-neutral-600">{text}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Image + philosophy -->
+	<section class="mx-auto max-w-6xl px-6 py-20">
+		<div class="grid items-center gap-12 lg:grid-cols-2">
+			<img
+				src="/images/uploads/spa-lounge-poolside.jpg"
+				alt="Poolside lounge seating with a calm, restorative atmosphere"
+				loading="lazy"
+				class="aspect-[4/3] w-full object-cover"
+			/>
+			<div>
+				<h2 class="font-display text-5xl text-sand italic">Beyond aesthetics</h2>
+				<p class="mt-6 leading-relaxed text-neutral-600">
+					Classical Feng Shui reads a property the way a guest feels it: where energy gathers,
+					where it stagnates, and where small adjustments can shift an entire experience.
+				</p>
+				<p class="mt-4 leading-relaxed text-neutral-600">
+					For hospitality brands, this translates directly into guest satisfaction, repeat
+					bookings and word-of-mouth — the space itself becomes part of the story guests tell.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Spa journey image band -->
+	<section class="bg-neutral-50">
+		<div class="mx-auto grid max-w-6xl gap-6 px-6 py-20 sm:grid-cols-2">
+			<img
+				src="/images/uploads/spa-water-feature.jpg"
+				alt="Water feature at the centre of a spa pool"
+				loading="lazy"
+				class="aspect-[4/3] w-full object-cover"
+			/>
+			<img
+				src="/images/uploads/spa-indoor-pool.jpg"
+				alt="Large indoor swimming pool with soft natural light"
+				loading="lazy"
+				class="aspect-[4/3] w-full object-cover"
+			/>
+		</div>
+	</section>
+
+	<!-- Process -->
+	<section class="mx-auto max-w-6xl px-6 py-20">
+		<h2 class="text-center font-display text-4xl text-neutral-900 uppercase tracking-[0.1em]">
+			How We Work Together
+		</h2>
+		<div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+			{
+				process.map(({ step, title, text }) => (
+					<div class="text-center">
+						<p class="font-display text-4xl text-tangerine italic">{step}</p>
+						<h3 class="mt-3 font-display text-lg tracking-[0.05em] text-neutral-900 uppercase">
+							{title}
+						</h3>
+						<p class="mt-3 leading-relaxed text-neutral-600">{text}</p>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="bg-sand">
+		<div class="mx-auto max-w-3xl px-6 py-20 text-center">
+			<h2 class="font-display text-4xl text-white italic">Let's transform your property</h2>
+			<p class="mt-6 leading-relaxed text-white/90">
+				Studio Dao Wellbeing helps hotel and spa brands become destinations guests remember — not
+				only for their beauty, but for how they made them feel.
+			</p>
+			<a
+				href="/contact"
+				class="mt-8 inline-block bg-coral px-8 py-3 text-sm font-medium tracking-[0.2em] text-white uppercase transition-colors hover:bg-tangerine"
+			>
+				Get in touch
+			</a>
+		</div>
+	</section>
+</Layout>
